@@ -1,18 +1,19 @@
 import React from "react";
-import "./App.css";
+import "./dashboard.css";
 import { Breadcrumb, Layout, Typography, Avatar, Menu} from "antd";
-import { UserOutlined, MenuOutlined, DashboardOutlined, MessageOutlined, EditOutlined,UsergroupAddOutlined} from '@ant-design/icons';
+import { UserOutlined } from '@ant-design/icons';
+import { MailOutlined } from '@ant-design/icons';
+import { MenuOutlined } from '@ant-design/icons';
 
+import SubMenu from 'antd/lib/menu/SubMenu';
 
-
-// import SubMenu from 'antd/lib/menu/SubMenu';
 // import { Typography } from 'antd';
 
 const { Header, Footer, Sider, Content} = Layout;
 const { Title } = Typography;
-function App() {
+function dashboard() {
   return (
-    <div className="App">
+    <div className="dashboard">
       <Layout>
         <Header style={{ padding: 10 }}>
           <Avatar style={{ float: 'right' }}  icon={<UserOutlined />} />
@@ -23,25 +24,12 @@ function App() {
         
           <Sider style={{background:'#193657'}}>
             <Menu
-            theme="dark"
             defaultSelectedKeys={['Dashboard']}
             mode="inline">
               <Menu.Item key='Dashboard'>
-              <span><DashboardOutlined /><span>Dashboard</span></span>
+                Dashboard
               </Menu.Item>
-              <Menu.Item key='DM'>
-              <span><MessageOutlined /><span>Daily Messages</span></span>
-              </Menu.Item>
-              <Menu.Item key='CM'>
-              <span><EditOutlined /><span>Content Management</span></span>
-              </Menu.Item>
-              <Menu.Item key='UM'>
-              <span><UsergroupAddOutlined /><span>Users Management</span></span>
-              </Menu.Item>
-              <Menu.Item key='AM'>
-              <span><UserOutlined /><span>Admin Management</span></span>
-              </Menu.Item>
-              {/* <SubMenu
+              <SubMenu
                               title={
                                 <span>
                                   <MailOutlined/>
@@ -51,9 +39,9 @@ function App() {
                 <Menu.ItemGroup key='AboutUs' title='Messages'>
                   <Menu.Item key='d1'>Daily Messages</Menu.Item>
                   <Menu.Item key='d2'>Daily Messages</Menu.Item>
-                
+                  <Menu.Item key='d3'>Daily Messages</Menu.Item>
                 </Menu.ItemGroup>
-              </SubMenu> */}
+              </SubMenu>
             </Menu>
           </Sider>
           <Layout>
@@ -67,7 +55,7 @@ function App() {
       <div style={{ background: '#fff', padding:24, minHeight:749}}>Content</div>
     </Content>
     <Footer style={{textAlign: 'center'}}>
-      SL Alert ©2022 Created by Derana Macroentertainment
+      SL Alert ©2022 Created by Derana Macroentertainment MacroIT
     </Footer>
         </Layout>
        
@@ -77,4 +65,4 @@ function App() {
   );
 }
 
-export default App;
+export default dashboard;
